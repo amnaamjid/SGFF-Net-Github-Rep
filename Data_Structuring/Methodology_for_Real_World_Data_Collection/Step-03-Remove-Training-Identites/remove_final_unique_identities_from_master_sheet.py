@@ -16,7 +16,7 @@ import re
 
 ROOT = Path("/home/amna/In-The-Wild-Dataset-Collection")
 
-MASTER_FILE = ROOT / "Master_Sheet.xlsx"
+MASTER_FILE = ROOT / "Master_Sheet_Unique_Clean.xlsx"
 IDENTITY_FILE = ROOT / "final_unique_identities.csv"
 
 OUTPUT_MASTER = ROOT / "Master_Sheet_Unique.xlsx"

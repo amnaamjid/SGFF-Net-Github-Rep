@@ -49,7 +49,7 @@ model_path = os.path.join(exp_root, "checkpoints/best_model.pth")
 datasets_root = {
     "DFFD_A": "/home/amna/projects/Comparison/DRN/Grayscale/DFFD_Test",
     "DFF_C": "/home/amna/projects/Comparison/DRN/Grayscale/DFF_C_Test",
-    "DiffFace_A": "/home/amna/projects/Comparison/DRN/Grayscale/DiffFace_A_Test"
+    "DiffFace_A": "/home/amna/projects/Comparison/DRN/Grayscale/DiffFace_Test"
 
 }
 
