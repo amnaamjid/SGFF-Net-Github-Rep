@@ -49,12 +49,16 @@ model_path = os.path.join(exp_root, "checkpoints/best_model.pth")
 datasets_root = {
     "DFFD_A": "/home/amna/projects/Comparison/DRN/Grayscale/DFFD_Test",
     "DFF_C": "/home/amna/projects/Comparison/DRN/Grayscale/DFF_C_Test",
-    "DiffFace_A": "/home/amna/projects/Comparison/DRN/Grayscale/DiffFace_Test"
+    "DiffFace_A": "/home/amna/projects/Comparison/DRN/Grayscale/DiffFace_A_Test",
+    "DiffFace_B": "//home/amna/projects/Comparison/DRN/Grayscale/DiffFace_B_Test",
+    "DiffFace_C": "/home/amna/projects/Comparison/DRN/Grayscale/DiffFace_C_Test",
+    "DiffFace_D": "/home/amna/projects/Comparison/DRN/Grayscale/DiffFace_D_Test",
+    "DiffFace_E": "/home/amna/projects/Comparison/DRN/Grayscale/DiffFace_E_Test"
 
 }
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-print(f"✅ Using device: {device}")
+print(f" Using device: {device}")
 
 # ============================================================== #
 # HELPER FUNCTION: High-Frequency FFT Transform
@@ -115,7 +119,7 @@ model.eval()
 # ============================================================== #
 
 def evaluate_dataset(name, data_dir):
-    print(f"\n🔍 Evaluating on {name} ...")
+    print(f"\n Evaluating on {name} ...")
     dataset = datasets.ImageFolder(data_dir, transform=transform)
     loader = DataLoader(dataset, batch_size=32, shuffle=False, num_workers=64)
 
@@ -189,7 +193,7 @@ def evaluate_dataset(name, data_dir):
     plt.savefig(os.path.join(exp_root, f"reports/pr_curve_{name}_{MODE}.png"))
     plt.close()
 
-    # ✅ Fixed indentation
+    # Fixed indentation
     metrics = {
         "Dataset": name,
         "Accuracy": round(acc, 4),
@@ -217,7 +221,7 @@ for name, path in datasets_root.items():
         metrics = evaluate_dataset(name, path)
         results.append(metrics)
     else:
-        print(f"⚠️ Dataset path not found: {path}")
+        print(f" Dataset path not found: {path}")
 
 # ============================================================== #
 # SAVE RESULTS
@@ -229,5 +233,5 @@ report_path = os.path.join(report_dir, f"evaluation_results_{MODE}.csv")
 pd.DataFrame(results).to_csv(report_path, index=False)
 json.dump(results, open(os.path.join(report_dir, f"evaluation_results_{MODE}.json"), "w"), indent=4)
 
-print("\n✅ Evaluation complete. Results saved to:")
+print("\n Evaluation complete. Results saved to:")
 print(f"{report_path}")

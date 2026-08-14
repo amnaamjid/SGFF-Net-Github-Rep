@@ -92,7 +92,7 @@ class DualResidualBlock(nn.Module):
 
 
 # =====================================================
-# 🔥 LIGHTWEIGHT DRN (FINAL)
+# LIGHTWEIGHT DRN 
 # =====================================================
 class DRN_Light(nn.Module):
     def __init__(self, in_ch=3, num_classes=2):
@@ -145,7 +145,7 @@ class DRN_Light(nn.Module):
 
 
 # =====================================================
-# SUPERVISED CONTRASTIVE LOSS
+# SUPERVISED CONTRASTIVE LOSS (this is optional) (Not used just for testing)
 # =====================================================
 class SupConLoss(nn.Module):
     def __init__(self, temperature=0.07):
@@ -171,7 +171,7 @@ class SupConLoss(nn.Module):
 
 
 # =====================================================
-# TRAIN STEP — CE + SUPCON
+# TRAIN STEP — CE + SUPCON (this is optional) (Not used just for testing)
 # =====================================================
 def train_step(model, batch, optimizer, device, supcon_loss, alpha=0.3):
     model.train()
@@ -203,4 +203,4 @@ if __name__ == "__main__":
     optimizer = torch.optim.AdamW(model.parameters(), lr=1e-4, weight_decay=1e-4)
     supcon_loss = SupConLoss(temperature=0.07)
 
-    print("✅ Lightweight DRN + IBN + CE + SupCon READY")
+    print(" Lightweight DRN READY")

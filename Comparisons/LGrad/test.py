@@ -30,7 +30,7 @@ from model.lgrad_model import LGradClassifier
 # SEED
 # ==========================================================
 
-seed = 20
+seed = 20 # 14, 24, 25, 29
 
 random.seed(seed)
 np.random.seed(seed)
@@ -62,7 +62,19 @@ datasets_root = {
 
     "DFF_C_Test": "/home/amna/projects/Comparisons/Compariosns/LGrad/LGrad/LGradComparisonsWithSGFFNET/Test/DFF_C_Test/Gradient/",
 
-    "DiffFace_A": "/home/amna/projects/Comparisons/Compariosns/LGrad/LGrad/LGradComparisonsWithSGFFNET/Test/DiffFace_A/Gradient/"
+    "DiffFace_A": "/home/amna/projects/Comparisons/Compariosns/LGrad/LGrad/LGradComparisonsWithSGFFNET/Test/DiffFace_A/Gradient/",
+    
+    "DiffFace_B": "/home/amna/projects/Comparisons/Compariosns/LGrad/LGrad/LGradComparisonsWithSGFFNET/Test/DiffFace_B/Gradient/",
+
+    "DiffFace_C": "/home/amna/projects/Comparisons/Compariosns/LGrad/LGrad/LGradComparisonsWithSGFFNET/Test/DiffFace_C/Gradient/",
+
+    "DiffFace_D": "/home/amna/projects/Comparisons/Compariosns/LGrad/LGrad/LGradComparisonsWithSGFFNET/Test/DiffFace_D/Gradient/",
+
+    "DiffFace_E": "/home/amna/projects/Comparisons/Compariosns/LGrad/LGrad/LGradComparisonsWithSGFFNET/Test/DiffFace_E/Gradient/"
+
+
+    
+    
 }
 
 

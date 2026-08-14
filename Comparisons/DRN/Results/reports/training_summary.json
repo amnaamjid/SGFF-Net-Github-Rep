@@ -1,6 +1,0 @@
-{
-    "best_val_acc": 0.8327868852459016,
-    "training_time_sec": 1647.39,
-    "num_epochs": 30,
-    "device": "cuda"
-}
